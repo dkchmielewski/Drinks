@@ -1,29 +1,21 @@
 class DrinkInfo {
     public static void main(String[] args) {
-        Drink drink1 = new Drink();
-        drink1.name = "Margarita";
-        drink1.price = 10.00;
-        drink1.containsAlcohol = true;
 
-        Drink ingredient1 = new Drink();
-        drink1.ingredient1 = "Tequila";
-        drink1.amountIngredient1 = 2;
+        Ingredient tequila = new Ingredient("Tequila", "2 oz");
+        Ingredient orangeLiquor = new Ingredient("Orange liquor", "1 oz");
+        Ingredient limeJuice = new Ingredient("Lime juice", "1 oz");
 
-        Drink ingredient2 = new Drink();
-        drink1.ingredient2 = "Orange liquor";
-        drink1.amountIngredient2 = 1;
-
-        Drink ingredient3 = new Drink();
-        drink1.ingredient3 = "Lime juice";
-        drink1.amountIngredient3 = 1;
-
+        Drink drink1 = new Drink("Margarita", 10.00, true, tequila,
+                orangeLiquor, limeJuice);
         System.out.println("Drink name: " + drink1.name);
         System.out.println("Price: $" + drink1.price);
         System.out.println("Contains alcohol: " + drink1.containsAlcohol);
-        System.out.println("Ingredients: " + drink1.ingredient1 + ", "
-                + drink1.ingredient2 + ", " + drink1.ingredient3);
-        System.out.println("Recipe: \n" + drink1.ingredient1 + ": " + drink1.amountIngredient1 + " oz" +
-        "\n" + drink1.ingredient2 + ": " + drink1.amountIngredient2 + " oz" +
-                "\n" + drink1.ingredient3 + ": " + drink1.amountIngredient3 + " oz");
+        System.out.println("Ingredients: \n" + drink1.ingredient1.name);
+        System.out.println(drink1.ingredient1.amount);
+        System.out.println(drink1.ingredient2.name);
+        System.out.println(drink1.ingredient2.amount);
+        System.out.println(drink1.ingredient3.name);
+        System.out.println(drink1.ingredient3.amount);
+
     }
 }
